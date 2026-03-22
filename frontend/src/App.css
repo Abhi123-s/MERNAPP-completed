@@ -1,0 +1,170 @@
+/* Import a clean Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f0f1a;
+  color: #e0e0f0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* The outermost wrapper */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ---- Header ---- */
+.app-header {
+  background: linear-gradient(90deg, #1a1a2e, #16213e);
+  padding: 14px 24px;
+  border-bottom: 1px solid #2a2a4a;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #a78bfa;
+  letter-spacing: 1px;
+}
+
+.app-header p {
+  font-size: 0.85rem;
+  color: #9090b0;
+  margin-top: 4px;
+}
+
+/* ---- Button row ---- */
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: #12121f;
+  border-bottom: 1px solid #1e1e3a;
+}
+
+/* Base button styles */
+.btn {
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Run Flow button — purple gradient */
+.btn-run {
+  background: linear-gradient(135deg, #6c63ff, #a78bfa);
+  color: #fff;
+}
+
+/* Save button — teal */
+.btn-save {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  color: #fff;
+}
+
+/* Status messages (Saved! / Error) */
+.status-msg {
+  font-size: 0.85rem;
+  color: #a0ffb0;
+  padding: 6px 12px;
+  background: #0f2a1a;
+  border-radius: 6px;
+  border: 1px solid #2a5a3a;
+}
+
+/* ---- The React Flow canvas area ---- */
+.flow-canvas {
+  flex: 1;           /* Takes all remaining vertical space */
+  width: 100%;
+}
+
+/* ---- Custom Node shared styles ---- */
+.node {
+  background: #1e1e3a;
+  border: 1.5px solid #3a3a6a;
+  border-radius: 12px;
+  padding: 16px;
+  width: 280px;
+  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.2);
+  font-size: 0.9rem;
+}
+
+/* Node title line */
+.node-title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #a78bfa;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Input Node specific ---- */
+.input-node {
+  border-color: #6c63ff;
+}
+
+/* The prompt textarea inside the input node */
+.prompt-textarea {
+  width: 100%;
+  background: #0d0d1f;
+  color: #e0e0f0;
+  border: 1px solid #3a3a6a;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.88rem;
+  font-family: 'Inter', sans-serif;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+}
+
+.prompt-textarea:focus {
+  border-color: #6c63ff;
+}
+
+/* ---- Result Node specific ---- */
+.result-node {
+  border-color: #0ea5e9;
+}
+
+/* The box that shows the AI response */
+.response-box {
+  background: #0d0d1f;
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.88rem;
+  color: #c0d8f0;
+  min-height: 80px;
+  max-height: 200px;
+  overflow-y: auto;
+  line-height: 1.6;
+  white-space: pre-wrap;   /* Preserve line breaks in the AI response */
+}
