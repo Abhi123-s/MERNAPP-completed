@@ -8,7 +8,7 @@ const aiRoutes = require("./routes/ai");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: "*" })); // Allow all origins for deployed frontend
 
 app.use(express.json());
 
@@ -25,8 +25,8 @@ mongoose
   .connect(MONGO_URI)
   .then(() => {
     console.log("✅ MongoDB connected");
-    const server = app.listen(PORT, () => {
-      console.log(`✅ Server running on http://localhost:${PORT}`);
+    const server = app.listen(PORT, "0.0.0.0", () => {
+      console.log(`✅ Server running on port ${PORT}`);
     })
     server.on("error", (err) => {
       if (err.code === "EADDRINUSE") {

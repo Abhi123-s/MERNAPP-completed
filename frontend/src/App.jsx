@@ -14,6 +14,10 @@ import InputNode from "./nodes/InputNode";
 import ResultNode from "./nodes/ResultNode";
 import "./App.css";
 
+// Base URL for all API calls — reads from .env (VITE_API_URL) in production, falls back to localhost
+const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+
 const nodeTypes = {
   inputNode: InputNode,
   resultNode: ResultNode,
@@ -24,10 +28,10 @@ const nodeTypes = {
 // -----------------------------------------------
 const initialEdges = [
   {
-    id: "edge-1",         
-    source: "node-input", 
-    target: "node-result", 
-    animated: true,       
+    id: "edge-1",
+    source: "node-input",
+    target: "node-result",
+    animated: true,
     style: { stroke: "#6c63ff", strokeWidth: 2 },
   },
 ];
@@ -95,10 +99,10 @@ export default function App() {
     }
 
     setLoading(true);
-    setStatusMsg(""); 
+    setStatusMsg("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/ask-ai", {
+      const res = await axios.post(`${API}/api/ask-ai`, {
         prompt: prompt,
       });
 
@@ -123,7 +127,7 @@ export default function App() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/save", {
+      await axios.post(`${API}/api/save`, {
         prompt: prompt,
         response: response,
       });
