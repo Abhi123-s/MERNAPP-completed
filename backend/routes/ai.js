@@ -7,10 +7,14 @@ const History = require("../models/History");
 // ROUTE 1: POST /api/ask-ai
 
 const FREE_MODELS = [
-  "deepseek/deepseek-r1:free",
-  "google/gemma-3-4b-it:free",
-  "mistralai/mistral-small-3.1-24b-instruct:free",
-  "qwen/qwen2.5-vl-3b-instruct:free",
+  "google/gemma-3-4b-it:free",           // Google Gemma 3 — widely available
+  "meta-llama/llama-3.2-3b-instruct:free", // Meta LLaMA 3.2 small — fast
+  "mistralai/mistral-7b-instruct:free",   // Mistral 7B — very stable
+  "deepseek/deepseek-r1:free",            // DeepSeek R1
+  "microsoft/phi-3-mini-128k-instruct:free", // Microsoft Phi-3
+  "google/gemma-2-9b-it:free",            // Google Gemma 2 9B
+  "meta-llama/llama-3.1-8b-instruct:free", // Meta LLaMA 3.1 8B
+  "mistralai/mistral-small-3.1-24b-instruct:free", // Mistral Small
 ];
 
 router.post("/ask-ai", async (req, res) => {
