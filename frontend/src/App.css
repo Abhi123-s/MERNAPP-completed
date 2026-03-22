@@ -168,3 +168,47 @@ body {
   line-height: 1.6;
   white-space: pre-wrap;   /* Preserve line breaks in the AI response */
 }
+
+/* ---- React Flow Controls (zoom in / out / fit) ---- */
+.react-flow__controls {
+  background: #1e1e3a;
+  border: 1px solid #3a3a6a;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.react-flow__controls-button {
+  background: #1e1e3a;
+  border-bottom: 1px solid #3a3a6a;
+  color: #a78bfa;
+  fill: #a78bfa;
+  transition: background 0.2s;
+}
+
+.react-flow__controls-button:hover {
+  background: #2e2e5a;
+}
+
+.react-flow__controls-button svg {
+  fill: #a78bfa;
+}
+
+/* ---- React Flow MiniMap (if added in future) ---- */
+.react-flow__minimap {
+  background: #1e1e3a;
+  border: 1px solid #3a3a6a;
+  border-radius: 8px;
+}
+
+/* ---- React Flow attribution panel (bottom right "ReactFlow" text) ---- */
+.react-flow__attribution {
+  background: #1e1e3a;
+  color: #6060a0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+}
+
+.react-flow__attribution a {
+  color: #a78bfa;
+}
